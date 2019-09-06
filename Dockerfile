@@ -5,3 +5,5 @@ COPY . .
 RUN npm i
 
 CMD ["node", "server"]
+
+# docker build -t swarmtest .
