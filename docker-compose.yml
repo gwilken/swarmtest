@@ -1,0 +1,15 @@
+# https://docs.docker.com/get-started/part3/
+
+version: '3'
+services:    
+  app:
+    # https://stackoverflow.com/questions/46032392/docker-compose-does-not-allow-to-use-local-images
+    image: swarmtest:latest
+    deploy:
+      replicas: 5
+    container_name: app
+    environment:
+     - NODE_ENV=dev
+     - HOST=host.docker.internal
+    ports:
+    - 8080:8080
